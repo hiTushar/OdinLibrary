@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&display=swap');
+
+:root {
+    --background: antiquewhite; 
+    --book_complete: #c03a2b; 
+    --book_incomplete: #35495e; 
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+body {
+    background-color: var(--background);  
+    width: 99%; 
+    height: 100vh;
+    margin: 5px; 
+    border: dotted;
+    font-family: 'Gentium Book Basic', sans-serif;
+}
+
+.logo {
+    width: 50px;
+    display: inline-block;
+}
+
+.main {
+    width: 99%; 
+    margin: 5px; 
+    padding: 20px;
+    display: grid;
+}
+
+.card {
+    border: solid 2px; 
+    width: 220px; 
+    height: 90px;
+    padding: 10px;
+    margin: 10px; 
+}
+
+.card .data {
+    text-align: right;
+}
