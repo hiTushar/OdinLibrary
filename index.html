@@ -13,6 +13,7 @@
     <div class="container">
         <header>
             <img class="logo" src="apple-touch-icon.png">
+            <button class="add_books"><span>+</span> New</button>
         </header>
         <main>
 
@@ -20,6 +21,27 @@
         <footer>
 
         </footer>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add new book</h2>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="title">Title: </label><br>
+                    <input type="text" name="title" id="title" value=""><br>
+                    <label for="author">Author: </label><br>
+                    <input type="text" name="author" id="author" value=""><br>
+                    <label for="pages">No. of Pages: </label><br>
+                    <input type="number" name="pages" id="pages" value=""><br>
+                    <input type="checkbox" name="status" id="status">
+                    <label for="status">Have you finished this book?</label><br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
