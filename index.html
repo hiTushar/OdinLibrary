@@ -29,17 +29,20 @@
                 <h2>Add new book</h2>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="formElem" autocomplete="off">
                     <label for="title">Title: </label><br>
-                    <input type="text" name="title" id="title" value=""><br>
+                    <input type="text" name="title" id="title" value="" required><br>
                     <label for="author">Author: </label><br>
-                    <input type="text" name="author" id="author" value=""><br>
+                    <input type="text" name="author" id="author" value="" required><br>
                     <label for="pages">No. of Pages: </label><br>
-                    <input type="number" name="pages" id="pages" value=""><br>
-                    <input type="checkbox" name="status" id="status">
+                    <input type="number" name="pages" id="pages" value="" required min=1><br>
+                    <input type="checkbox" name="status" id="status" value="true">
                     <label for="status">Have you finished this book?</label><br>
                     <input type="submit" name="submit" value="Submit">
                 </form>
+                <div class="message">
+                    <h1>Added Successfully !!</h1>
+                </div>
             </div>
         </div>
     </div>
