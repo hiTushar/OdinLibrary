@@ -70,7 +70,7 @@ body {
 }
 .modal-content {
     background-color: #fefefe;
-    margin: 0 auto; /* 15% from the top and centered */
+    margin: 0 auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 300px; /* Could be more or less, depending on screen size */
@@ -97,19 +97,17 @@ cursor: pointer;
     display: inline-block;
     background-color: var(--background1);
 }
-
+.card .title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .card.unfinished_shadow {
     box-shadow: var(--book_unfinished) 5px 5px;
 }
-
 .card.finished_shadow {
     box-shadow: var(--book_finished) 5px 5px; 
 }
-
-.card h1 {
-    display: inline-block;
-}
-
 .card .data {
     text-align: right;
 }

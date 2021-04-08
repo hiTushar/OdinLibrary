@@ -32,7 +32,7 @@ function display(){
                             <span>${book.pages}p</span>
                         </p>
                         <div>
-                            <button id="del">Delete</button>
+                            <button class="del">Delete</button>
                             <button class="change_status"></button>
                         </div>
                     </div> 
@@ -50,7 +50,7 @@ function display(){
             document.querySelector(`div[data-index='${index}'] button.change_status`).innerText = 'Finished?'; 
         }  
         document.querySelector(`div[data-index='${index}'] button.change_status`).addEventListener('click', () => {changeStatus(index)});
-        
+        document.querySelector(`div[data-index='${index}'] button.del`).addEventListener('click', () => {deleteCard(index)});
 
     }
 }
@@ -59,34 +59,38 @@ function changeStatus(index) { // toggle finished/unfinished status
     
     let myLibrary = getCollection(); 
     let myBook = myLibrary[index]; 
-    if(myBook.status) {
-        myBook.status = false; 
-    }
-    else {
-        myBook.status = true; 
-    }
+    myBook.status = !myBook.status;
+    
+    saveCollection(myLibrary); 
+    display(); 
+}
+
+function deleteCard(index) {
+    let myLibrary = getCollection(); 
+    myLibrary.splice(index, 1); 
     saveCollection(myLibrary); 
     display(); 
 }
 
 
-/* form modal window */ 
+/* FORM MODAL WINDOW */ 
 let addButton = document.querySelector('.add_books'); 
 let closeForm = document.querySelector('span.close'); 
 let modalForm = document.querySelector('.modal');
 let myForm = document.getElementById('formElem'); 
 
 addButton.onclick = function() {
-    modalForm.style.display = 'block'; 
-    myForm.style.display = 'block'; 
+    modalForm.style.display = 'block'; /* the modal box */
+    myForm.style.display = 'block';    /* the form within */
     document.querySelector('.message').style.display = 'none'; 
+    document.querySelector('.modal-header h2').style.display = 'block';
 }
 
-closeForm.onclick = function() {
+closeForm.onclick = function() { /* if x is clicked */
     modalForm.style.display = 'none'; 
 }
 
-window.onclick = function(event) {
+window.onclick = function(event) { /* if the space outside of the modal box is clicked */
     if(event.target === modalForm) {
         modalForm.style.display = 'none'; 
     }
@@ -102,10 +106,11 @@ myForm.addEventListener('submit', (e) => {
 
     e.target.reset(); 
     myForm.style.display = 'none'; 
-    document.querySelector('.message').style.display = 'block';
+    document.querySelector('.message').style.display = 'block'; /* display message of success */
+    document.querySelector('.modal-header h2').style.display = 'none';
 
   });
-/* form modal window */ 
+/* FORM MODAL WINDOW */ 
 
  
 
