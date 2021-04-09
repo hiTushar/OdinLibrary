@@ -7,6 +7,10 @@ function Book(title, author, pages, status) { // the constructor
     this.status = status; 
 }
 
+function addSample() {
+    addBookToLibrary(new Book('One Hundred Years of Solitude', 'Gabriel García Márquez', 401, true));
+}
+
 function saveCollection(libArr) {
     window.localStorage.setItem('collection', JSON.stringify(libArr));
 }
@@ -26,11 +30,10 @@ function display(){
     for(let [index, book] of myLibrary.entries()){
         let card = `<div class='card' data-index='${index}'>
                         <h1 class="title">${book.status?'':'*'}${book.title}</h1> <!-- adding * for unfinished book -->
-                        <p class="data">
-                            <span>${book.author}</span>
-                            -
-                            <span>${book.pages}p</span>
-                        </p>
+                        <div class="data">
+                            <div>${book.author}</div>
+                            <div>${book.pages}p</div>
+                        </div>
                         <div>
                             <button class="del">Delete</button>
                             <button class="change_status"></button>
@@ -115,5 +118,5 @@ myForm.addEventListener('submit', (e) => {
  
 
 
-  window.onload = () => display();
+  window.onload = () => {addSample(); display()};
  
