@@ -118,5 +118,8 @@ myForm.addEventListener('submit', (e) => {
  
 
 
-  window.onload = () => {addSample(); display()};
+window.onload = () => {
+    if(getCollection() === null) addSample(); // when book has been added 
+    display()
+};
  

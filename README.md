@@ -8,9 +8,11 @@ This project is part of the [**The odin project**](https://www.theodinproject.co
 - button to delete card (completed)
 - button to toggle status (completed)
 - shadow to display status (completed)
-- FCC3 navbar - responsive
+- FCC3 navbar - responsive (completed)
 - footer - responsive
-- character overflow
+- add grid 
+- character overflow (completed)
 - implement someone else's code
 - modal pop up for each card
 - filter pills - read/unread/all
+  
